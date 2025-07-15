@@ -1,0 +1,7 @@
+grpc:
+  server:
+    port: 9091
+  client:
+    roleService:
+      address: static://localhost:9090
+      negotiationType: plaintext
