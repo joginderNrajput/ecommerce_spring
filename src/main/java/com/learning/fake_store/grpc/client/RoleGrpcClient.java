@@ -1,4 +1,4 @@
-package com.learning.fake_store.client.grpc;
+package com.learning.fake_store.grpc.client;
 
 import com.flip.grpc.licensing.AllRolesResponse;
 import com.flip.grpc.licensing.RoleServiceGrpc;

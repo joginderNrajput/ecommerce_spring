@@ -3,7 +3,7 @@ package com.learning.fake_store.controllers;
 import com.flip.grpc.licensing.AllRolesResponse;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
-import com.learning.fake_store.client.grpc.RoleGrpcClient;
+import com.learning.fake_store.grpc.client.RoleGrpcClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
