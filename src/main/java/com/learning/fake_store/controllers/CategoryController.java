@@ -3,6 +3,7 @@ package com.learning.fake_store.controllers;
 import com.learning.fake_store.dto.CategoryDTO;
 import com.learning.fake_store.dto.CategoryRequestDTO;
 import com.learning.fake_store.gateway.FakeStoreCategoryGateway;
+import com.learning.fake_store.services.CategoryService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +17,12 @@ import java.util.List;
 public class CategoryController {
 
     public final FakeStoreCategoryGateway fakeStoreCategoryGateway;
+    public final CategoryService categoryService;
 
-    public CategoryController(@Qualifier("fakeStoreCategoryImpl")FakeStoreCategoryGateway fakeStoreCategoryGateway){
+    public CategoryController(@Qualifier("fakeStoreCategoryGatewayImpl")FakeStoreCategoryGateway fakeStoreCategoryGateway,
+                            CategoryService categoryService){
         this.fakeStoreCategoryGateway = fakeStoreCategoryGateway;
+        this.categoryService = categoryService;
     }
 
     @GetMapping
