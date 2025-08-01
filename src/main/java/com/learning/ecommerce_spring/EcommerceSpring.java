@@ -1,11 +1,13 @@
-package com.learning.fake_store;
+package com.learning.ecommerce_spring;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-public class FakeStoreApplication {
+@EnableJpaAuditing
+public class EcommerceSpring {
 
 	Dotenv dotenv = Dotenv.configure().load();
 
@@ -16,7 +18,7 @@ public class FakeStoreApplication {
 				System.setProperty(entry.getKey(), entry.getValue())
 		);
 
-		SpringApplication.run(FakeStoreApplication.class, args);
+		SpringApplication.run(EcommerceSpring.class, args);
 	}
 
 }

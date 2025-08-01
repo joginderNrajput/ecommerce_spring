@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.flip.grpc.licensing";
+option java_outer_classname = "RoleServiceProto";
+
+package role;
+
+import "google/protobuf/empty.proto";
+
+service RoleService {
+    rpc GetAllRoles (google.protobuf.Empty) returns (AllRolesResponse);
+}
+
+message RoleInfo {
+    string id = 1;
+    string roleName = 2;
+}
+
+message AllRolesResponse {
+    repeated RoleInfo roleList = 1;
+    string message = 2;
+}
