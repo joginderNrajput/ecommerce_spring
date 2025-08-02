@@ -1,6 +1,9 @@
 package com.learning.ecommerce_spring.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 @Entity
@@ -18,7 +21,12 @@ public class Product extends BaseEntity {
     private String model;
 //    private int id;
     private String title;
-    private String category;
+//    private String category;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="column_id", nullable = false)
+    private Category category;
+
     private String brand;
     private boolean popular;
 }
