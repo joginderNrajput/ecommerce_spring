@@ -3,6 +3,7 @@ package com.learning.ecommerce_spring.controllers;
 import com.flip.grpc.licensing.AllRolesResponse;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
+import com.learning.ecommerce_spring.exception.CustomException;
 import com.learning.ecommerce_spring.grpc.client.RoleGrpcClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +25,10 @@ public class TestController {
         AllRolesResponse response = roleGrpcClient.getAllRoles();
         String json = JsonFormat.printer().includingDefaultValueFields().print(response);
         return ResponseEntity.ok(json);
+    }
+
+    @GetMapping("/testException")
+    public ResponseEntity<?> testCustomException(){
+        throw new CustomException("Testing Custom Exception for Global Exception Handler.");
     }
 }
