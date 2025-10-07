@@ -3,10 +3,12 @@ package com.learning.ecommerce_spring;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
+@EnableDiscoveryClient
 public class EcommerceSpring {
 
 	Dotenv dotenv = Dotenv.configure().load();
